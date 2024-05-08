@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatera Barat</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    
+</head>
+<body>
+    <!--Ini Judul-->
+    <nav class="nav-atas">
+        <h1>Sumatera Barat Travel Agency</h1>
+    </nav>
+    <!--Ini Bar Navigasi-->
+    <div class="barnav">
+        <a>Home</a>
+        <a>About</a>
+        <a>Our Package</a>
+        <a>Contact Us</a>
+    </div>
+    <h2>Get Ready For Incredible Journey at West Sumatra !</h2>
+    <!-- Div untuk banner -->
+    <div class="banner">
+        <!-- Gambar-gambar banner -->
+        <img src="Gambar/Istana.jpg" alt="Slide 1">
+        <img src="Gambar/Masjid.jpg" alt="Slide 2">
+        <img src="Gambar/DSC_0124.JPG" alt="Slide 3">
+    </div>
+
+    <script>
+        var currentIndex = 0;
+        var images = ['Gambar/Istana.jpg', 'Gambar/Masjid.jpg', 'Gambar/DSC_0124.JPG']; // Ganti dengan nama gambar dan path yang sesuai
+        var imgElement = document.querySelector('.banner');
+
+        function slide() {
+            if (currentIndex === images.length) {
+                currentIndex = 0;
+            }
+            imgElement.innerHTML = ''; // Menghapus gambar sebelumnya
+            var newImg = document.createElement('img');
+            newImg.src = images[currentIndex];
+            newImg.alt = 'Slide ' + (currentIndex + 1);
+            imgElement.appendChild(newImg);
+            currentIndex++;
+        }
+
+        setInterval(slide, 2000); // Ganti dengan waktu delay (dalam milidetik)
+    </script>  
+
+    <div class="contact-form">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
